@@ -21,11 +21,19 @@ public class SegnoZodiacale {
         return segno;
     }
     
-    public String getDataInizio() {
-        return dataInizio;
+    public int getGiornoInizio() {
+        return Integer.parseInt(dataInizio.substring(0, 2));
     }
     
-    public String getDataFine() {
-        return dataFine;
+    public String getMeseInizio() {
+        return dataInizio.substring(2);
+    }
+    
+    public int getGiornoFine() {
+        return Integer.parseInt(dataFine.substring(0, 2));
+    }
+    
+    public String getMeseFine() {
+        return dataFine.substring(2);
     }
 }

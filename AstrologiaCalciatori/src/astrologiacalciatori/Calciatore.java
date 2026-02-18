@@ -23,7 +23,11 @@ public class Calciatore {
         return goal;
     }
     
-    public String getDataNascita() {
-        return dataNascita;
+    public int getGiornoNascita() {
+        return Integer.parseInt(dataNascita.substring(0, 2));
+    }
+    
+    public String getMeseNascita() {
+        return dataNascita.substring(2, 4);
     }
 }

@@ -34,7 +34,6 @@ public class FileManager {
             String line;
             while((line = reader.readLine()) != null) {
                 String[] colonne = line.split(",");
-                
                 SegnoZodiacale s = new SegnoZodiacale(colonne[0], colonne[1].replace("/", ""), colonne[2].replace("/", ""));
             }
         }

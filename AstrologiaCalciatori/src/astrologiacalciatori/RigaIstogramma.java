@@ -24,4 +24,8 @@ public class RigaIstogramma {
     public int getGoal() {
         return goalTotali;
     }
+    
+    public String getSegno() {
+        return segno;
+    }
 }
