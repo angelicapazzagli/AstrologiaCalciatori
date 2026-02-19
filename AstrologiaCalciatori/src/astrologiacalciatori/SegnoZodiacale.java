@@ -5,12 +5,19 @@
 package astrologiacalciatori;
 
 /**
- *
+ * Classe che identifica un segno zodiacale, la sua data di inizio e fine.
  * @author pazzagli.angelica
  */
 public class SegnoZodiacale {
     private String segno, dataInizio, dataFine;
     
+    /**
+     * Costruisce un segno zodiacale.
+     * 
+     * @param segno è il nome del segno zodiacale
+     * @param inizio è la data di inizio del segno zodiacale
+     * @param fine è la data di fine del segno zodiacale
+     */
     public SegnoZodiacale(String segno, String inizio, String fine) {
         this.segno = segno;
         this.dataInizio = inizio;

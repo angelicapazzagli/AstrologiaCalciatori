@@ -25,6 +25,10 @@ public class Gestore {
         this.risultati = new ArrayList();
     }
     
+    /**
+     * Metodo che legge i due file che devono essere gestiti.
+     * @throws IOException se si verifica un errore durante la lettura.
+     */
     public void readFiles() throws IOException {
         this.calciatori = FileManager.readFileSportivi(fileSportivo);
         this.segniZodiacali = FileManager.readFileZodiaco(fileZodiaco);

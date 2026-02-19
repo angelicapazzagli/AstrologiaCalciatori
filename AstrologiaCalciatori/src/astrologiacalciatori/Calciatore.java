@@ -5,13 +5,21 @@
 package astrologiacalciatori;
 
 /**
- *
+ * Classe che identifica un calciatore ed i suoi dettagli.
  * @author pazzagli.angelica
  */
 public class Calciatore {
     private String nome, nazionalità, dataNascita;
     private int goal;
     
+    /**
+     * Costruisce un calciatore con tutti i suoi attributi.
+     * 
+     * @param nome è il nome del calciatore
+     * @param goal è il numero di goal che ha fatto il calciatore
+     * @param nazionalità è la nazionalità del calciatore
+     * @param nascita è la data di nascita del calciatore
+     */
     public Calciatore(String nome, int goal, String nazionalità, String nascita) {
         this.nome = nome;
         this.goal = goal;
