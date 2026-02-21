@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
- *
+ * Classe che identifica il gestore dei file.
  * @author pazzagli.angelica
  */
 public class Gestore {
@@ -18,6 +18,13 @@ public class Gestore {
     private ArrayList<SegnoZodiacale> segniZodiacali;
     private ArrayList<RigaIstogramma> risultati;
     
+    
+    /**
+     * Metodo che costruisce il gestore dei file.
+     * 
+     * @param fileSportivo il file che contiene i sportivi ed i loro dati
+     * @param fileZodiaco il file che contiene i segni zodiacali ed i loro dettagli
+     */
     public Gestore(String fileSportivo, String fileZodiaco) {
         this.fileSportivo = fileSportivo;
         this.fileZodiaco = fileZodiaco;
@@ -35,6 +42,9 @@ public class Gestore {
         this.segniZodiacali = FileManager.readFileZodiaco(fileZodiaco);
     }
     
+    /**
+     * Metodo per controllare di quale segno fa parte ogni calciatore così da poterci aggiungere i suoi goal nei risultati che andranno a costituire l'istogramma.
+     */
     public void controllaSegni() {
         for(SegnoZodiacale s : segniZodiacali) {
             for(Calciatore c : calciatori) {
@@ -67,6 +77,9 @@ public class Gestore {
         }
     }
     
+    /**
+     * Metodo per stampare ed ordinare in modo decrescente ogni risultato.
+     */
     public void stampaRisultati() {
         int maxGoal = 0;
         for(RigaIstogramma r : risultati) {
@@ -78,5 +91,14 @@ public class Gestore {
         for(RigaIstogramma riga : risultati) {
             System.out.println(riga.stampaRiga(maxGoal));
         }
+    }
+    
+    /**
+     * Metodo che restituisce la lista dei risultati.
+     * 
+     * @return i risultati che rappresentano l'istogramma
+     */
+    public ArrayList<RigaIstogramma> getRisultati() {
+        return risultati;
     }
 }

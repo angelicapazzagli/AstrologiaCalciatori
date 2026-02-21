@@ -23,6 +23,5 @@ public class AstrologiaCalciatori {
         g.controllaSegni();
         
         g.stampaRisultati();
-    }
-    
+    } 
 }

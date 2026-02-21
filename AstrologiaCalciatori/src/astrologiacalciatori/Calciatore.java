@@ -5,7 +5,7 @@
 package astrologiacalciatori;
 
 /**
- * Classe che identifica un calciatore ed i suoi dettagli.
+ * Classe che identifica un calciatore ed i suoi dati.
  * @author pazzagli.angelica
  */
 public class Calciatore {
@@ -27,14 +27,29 @@ public class Calciatore {
         this.dataNascita = nascita;
     }
     
+    /**
+     * Metodo per restituire il numero di goal del calciatore.
+     * 
+     * @return il numero di goal del calciatore
+     */
     public int getGoal() {
         return goal;
     }
     
+    /**
+     * Metodo per restituire il giorno in cui è nato il calciatore.
+     * 
+     * @return il giorno in cui è nato il calciatore
+     */
     public int getGiornoNascita() {
         return Integer.parseInt(dataNascita.substring(0, 2));
     }
     
+    /**
+     * Metodo per restituire il mese in cui è nato il calciatore.
+     * 
+     * @return il mese in cui è nato il calciatore
+     */
     public String getMeseNascita() {
         return dataNascita.substring(2, 4);
     }
