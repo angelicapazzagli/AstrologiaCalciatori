@@ -28,4 +28,13 @@ public class RigaIstogramma {
     public String getSegno() {
         return segno;
     }
+    
+    public String stampaRiga(int maxGoal) {
+        int nAsterischi = goalTotali * 50 / maxGoal;
+        String asterischi = "";
+        for(int i = 0; i < nAsterischi; i++) {
+            asterischi += "*";
+        }
+        return segno + " (" + goalTotali + ") " + asterischi;
+    }
 }

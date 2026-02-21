@@ -6,6 +6,7 @@ package astrologiacalciatori;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  *
@@ -37,12 +38,45 @@ public class Gestore {
     public void controllaSegni() {
         for(SegnoZodiacale s : segniZodiacali) {
             for(Calciatore c : calciatori) {
-                if(c.getMeseNascita().equals(s.getMeseInizio()) || c.getMeseNascita().equals(s.getMeseFine())) {
+                boolean check = false;
+                if(c.getMeseNascita().equals(s.getMeseInizio())) {
                     if(c.getGiornoNascita() >= s.getGiornoInizio()) {
-                        boolean check = false;
+                        check = true;
+                    }
+                }
+                else if(c.getMeseNascita().equals(s.getMeseFine())) {
+                    if(c.getGiornoNascita() <= s.getGiornoFine()) {
+                        check = true;
+                    }
+                }
+                if(check) {
+                    boolean presenzaSegno = false;
+                    for(RigaIstogramma riga : risultati) {
+                        if(riga.getSegno().equals(s.getSegno())) {
+                            riga.addGoal(c.getGoal());
+                            presenzaSegno = true;
+                        }
+                    }
+                    if(!presenzaSegno) {
+                        RigaIstogramma riga = new RigaIstogramma(s.getSegno());
+                        riga.addGoal(c.getGoal());
+                        risultati.add(riga);
                     }
                 }
             }
+        }
+    }
+    
+    public void stampaRisultati() {
+        int maxGoal = 0;
+        for(RigaIstogramma r : risultati) {
+            if(r.getGoal() > maxGoal) {
+                maxGoal = r.getGoal();
+            }
+        }
+        risultati.sort(Comparator.comparing(RigaIstogramma::getGoal).reversed());
+        for(RigaIstogramma riga : risultati) {
+            System.out.println(riga.stampaRiga(maxGoal));
         }
     }
 }

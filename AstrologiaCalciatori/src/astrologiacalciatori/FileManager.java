@@ -31,6 +31,7 @@ public class FileManager {
                 String[] colonne = line.split(",");
                 int goal = Integer.parseInt(colonne[1]);
                 Calciatore c = new Calciatore(colonne[0], goal, colonne[2].replace("/", ""), colonne[3].replace("/", ""));
+                convocazione.add(c);
             }
         }
         return convocazione;
@@ -51,6 +52,7 @@ public class FileManager {
             while((line = reader.readLine()) != null) {
                 String[] colonne = line.split(",");
                 SegnoZodiacale s = new SegnoZodiacale(colonne[0], colonne[1].replace("/", ""), colonne[2].replace("/", ""));
+                segni.add(s);
             }
         }
         return segni;

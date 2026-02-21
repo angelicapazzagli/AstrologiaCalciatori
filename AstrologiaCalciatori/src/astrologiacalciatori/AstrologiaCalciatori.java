@@ -16,9 +16,13 @@ public class AstrologiaCalciatori {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        Gestore g = new Gestore("sportiiv.csv", "zodiaco.csv");
+        Gestore g = new Gestore("sportivi.csv", "zodiaco.csv");
         
         g.readFiles();
+        
+        g.controllaSegni();
+        
+        g.stampaRisultati();
     }
     
 }
