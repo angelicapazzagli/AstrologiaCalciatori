@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
- * Classe che identifica il gestore dei file.
+ * Classe che identifica il gestore dei dati che vengono estratti dai file e che contiene il risultato dell'obiettivo.
  * @author pazzagli.angelica
  */
 public class Gestore {

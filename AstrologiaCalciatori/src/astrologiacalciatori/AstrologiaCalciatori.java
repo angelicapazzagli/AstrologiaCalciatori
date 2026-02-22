@@ -7,7 +7,7 @@ package astrologiacalciatori;
 import java.io.IOException;
 
 /**
- *
+ * Classe che ha l'obiettivo di verificare se l'astrologia influisce sui goal dei calciatori.
  * @author pazzagli.angelica
  */
 public class AstrologiaCalciatori {
