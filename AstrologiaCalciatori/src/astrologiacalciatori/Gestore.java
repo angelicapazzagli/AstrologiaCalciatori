@@ -35,6 +35,7 @@ public class Gestore {
     
     /**
      * Metodo che legge i due file che devono essere gestiti.
+     * 
      * @throws IOException se si verifica un errore durante la lettura.
      */
     public void readFiles() throws IOException {
@@ -78,27 +79,38 @@ public class Gestore {
     }
     
     /**
-     * Metodo per stampare ed ordinare in modo decrescente ogni risultato.
+     * Metodo che individua il totale di goal più alto.
+     * 
+     * @return il totale di goal più alto
      */
-    public void stampaRisultati() {
-        int maxGoal = 0;
+    public int maxGoal() {
+       int maxGoal = 0;
         for(RigaIstogramma r : risultati) {
             if(r.getGoal() > maxGoal) {
                 maxGoal = r.getGoal();
             }
         }
+        return maxGoal;
+    }
+    
+    /**
+     * @deprecated perchè con il JFrame istogramma non deve più essere utilizzato
+     * Metodo per stampare ed ordinare in modo decrescente il risultato.
+     */
+    public void stampaRisultati() {
         risultati.sort(Comparator.comparing(RigaIstogramma::getGoal).reversed());
         for(RigaIstogramma riga : risultati) {
-            System.out.println(riga.stampaRiga(maxGoal));
+            System.out.println(riga.stampaRiga(maxGoal()));
         }
     }
     
     /**
-     * Metodo che restituisce la lista dei risultati.
+     * Metodo che restituisce la lista dei risultati, ovvero le righe dell'istogramma.
      * 
      * @return i risultati che rappresentano l'istogramma
      */
     public ArrayList<RigaIstogramma> getRisultati() {
+        risultati.sort(Comparator.comparing(RigaIstogramma::getGoal).reversed());
         return risultati;
     }
 }

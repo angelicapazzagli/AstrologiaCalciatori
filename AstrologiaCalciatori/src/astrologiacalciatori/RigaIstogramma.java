@@ -53,7 +53,7 @@ public class RigaIstogramma {
      * Metodo per restituire i dettagli della riga ed il calcolo degli asterischi che gli spettano.
      * 
      * @param maxGoal il numero massimo di goal che è stato trovato
-     * @return il nome del segno con i rispettivi goal ed il numero di asterischi appena calcato secondo una proporzione
+     * @return il nome del segno con i rispettivi goal ed il numero di asterischi appena calcolato secondo una proporzione
      */
     public String stampaRiga(int maxGoal) {
         int nAsterischi = goalTotali * 50 / maxGoal;

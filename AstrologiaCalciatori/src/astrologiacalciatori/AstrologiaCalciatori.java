@@ -13,6 +13,10 @@ import java.io.IOException;
 public class AstrologiaCalciatori {
 
     /**
+     * Metodo principale per avviare il programma.
+     * 
+     * @see Gestore
+     * @see Istogramma
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
@@ -23,5 +27,10 @@ public class AstrologiaCalciatori {
         g.controllaSegni();
         
         g.stampaRisultati();
+        
+        Istogramma istogramma = new Istogramma();
+        istogramma.aggiornaBarre(g);
+        istogramma.setVisible(true);
+        
     } 
 }
