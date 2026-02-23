@@ -50,15 +50,26 @@ public class RigaIstogramma {
     }
     
     /**
+     * Metodo che calcola quanti asterischi ha il segno in base ai goal, in proporzione al maggiore.
+     * 
+     * @param maxGoal il massimo di goal che è stato trovato
+     * @return il numero di asterischi propri del segno
+     */
+    public int getAsterischi(int maxGoal) {
+        int nAsterischi;
+        return nAsterischi = goalTotali * 50 / maxGoal;
+    }
+    
+    /**
      * Metodo per restituire i dettagli della riga ed il calcolo degli asterischi che gli spettano.
      * 
      * @param maxGoal il numero massimo di goal che è stato trovato
      * @return il nome del segno con i rispettivi goal ed il numero di asterischi appena calcolato secondo una proporzione
      */
     public String stampaRiga(int maxGoal) {
-        int nAsterischi = goalTotali * 50 / maxGoal;
+        getAsterischi(maxGoal);
         String asterischi = "";
-        for(int i = 0; i < nAsterischi; i++) {
+        for(int i = 0; i < getAsterischi(maxGoal); i++) {
             asterischi += "*";
         }
         return segno + " (" + goalTotali + ") " + asterischi;

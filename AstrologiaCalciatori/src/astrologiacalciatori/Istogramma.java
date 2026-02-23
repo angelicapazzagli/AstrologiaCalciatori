@@ -40,7 +40,7 @@ public class Istogramma extends javax.swing.JFrame {
     }
     
     /**
-     * Metodo che aggiorna i testi delle progress bar secondo i risultati che vengono presi da un'altra classe.
+     * Metodo che aggiorna i testi delle progress bar secondo i risultati che vengono presi dalla classe Gestore e dalla classe RigaIstogramma.
      * 
      * @see Gestore
      * @param gestore è un'istanza della classe Gestore
@@ -49,8 +49,7 @@ public class Istogramma extends javax.swing.JFrame {
         ArrayList<RigaIstogramma> risultati = gestore.getRisultati();
         int maxGoal = gestore.maxGoal();
         for(int i = 0; i < barre.size(); i++) {
-            int valore = risultati.get(i).getGoal() * 100 / maxGoal;
-            barre.get(i).setValue(valore);
+            barre.get(i).setValue(risultati.get(i).getAsterischi(maxGoal) * 2);
             String testo = risultati.get(i).getSegno() + " (" + risultati.get(i).getGoal() + ")";
             barre.get(i).setString(testo);
         }
